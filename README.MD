@@ -6,17 +6,19 @@ Supports skipping subsequent ticks if processing of current tick takes longer th
 
 ### Usage
 
-    object : RxCountDownTimer(
-        count = 10, 
-        period = 1, 
-        unit = TimeUnit.SECONDS, 
-        observeOn = Schedulers.computation()
-    ) {
-        override fun onTick(tickValue: Long) {
-            println("RxCountDownTimer tick $tickValue")
-        }
-    
-        override fun onFinish() {
-            println("RxCountDownTimer finished.")
-        }
-    }.start()
+```kotlin
+object : RxCountDownTimer(
+    count = 10, 
+    period = 1, 
+    unit = TimeUnit.SECONDS, 
+    observeOn = Schedulers.computation()
+) {
+    override fun onTick(tickValue: Long) {
+        println("RxCountDownTimer tick $tickValue")
+    }
+
+    override fun onFinish() {
+        println("RxCountDownTimer finished.")
+    }
+}.start()
+```
